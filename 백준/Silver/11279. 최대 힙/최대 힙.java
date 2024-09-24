@@ -18,8 +18,7 @@ public class Main {
                 queue.add(input);
             } else {
                 queue.add(0);
-                System.out.println(queue.peek());
-                queue.remove(queue.peek());
+                System.out.println(queue.poll());
             }
         }
     }
