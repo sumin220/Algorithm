@@ -6,22 +6,21 @@ import java.util.Stack;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         int n = Integer.parseInt(br.readLine());
 
         Stack<Integer> stack = new Stack<>();
+        int total = 0; 
 
         for (int i = 0; i < n; i++) {
-            stack.push(Integer.parseInt(br.readLine()));
-            if (stack.peek() == 0) {
-                stack.pop();
-                stack.pop();
+            int num = Integer.parseInt(br.readLine());
+            if (num == 0) {
+                total -= stack.pop();
+            } else {
+                stack.push(num);
+                total += num;
             }
         }
-        int total = 0;
-        for (int i = 0; i < stack.size(); i++) {
-            total += stack.get(i);
-        }
+
         System.out.println(total);
     }
 }
